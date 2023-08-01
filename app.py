@@ -1,9 +1,9 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/welcome')
 def welcome():
     return 'This is My First Flask app' 'Yay! ;)'
 
@@ -19,5 +19,14 @@ def method():
         return "You've used the Post Method!"
     else:
         return "You've Used the Get Method!"
+
+
+# Get start with jinja2 HTML templates
+
+@app.route('/')
+def rootpage():
+    return render_template("index.html")
+
+
 
 app.run()
