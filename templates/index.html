@@ -2,15 +2,47 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
-    <title>FLask Application</title>
+    <title>Flask Application</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link rel="icon" type="image/png" href="images/logo.png">-->
-    <link rel="stylesheet" type="text/css" href="((uri_for('static', filename='css/style.css' ))">
+
+<!--    <link rel="stylesheet" type="text/css" href="((uri_for('static', filename='css/style.css' ))">-->
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
 </head>
 <body id="top" class="ss-preload theme-static">
-    <h1>Gokul's website Nice to meet you.</h1>
-    <h1 class="text-huge-title"> This is MY First & Flask Application welcomes You. </h1>
+<!--    <h1> Welcome to My website Nice to meet you.</h1>-->
+<!--    <h1 class="text-huge-title"> This is MY First & Flask Application welcomes You. </h1>-->
+<p>Please enter Your Name</p>
+<form class="pure-form" method="post" action="/">
+Name:<br>
+    <input type="text" name="userName">
+    <br>
+    <br>
+Favorite Language:<br>
+    <br>
+    <br>
+    <select name="favoriteLanguage">
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="Javascript">Javascript</option>
+        <option value="PHP">PHP</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit">
+</form>
+
+<br>
+<br>
+<br>
+<br>
+
+<div>
+    { % if name %}
+        <p> Welcome to My Website {{ name }}!</p>
+        <p> {{name}}'s Favorite Language is {{ language }}!</p>
+    { % endif %}
+</div>
 </body>
 </html>

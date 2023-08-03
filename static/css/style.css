@@ -1,7 +1,9 @@
 h1{
 text-align : center;
 color: blue;
+align-items: center;
+    font-family: "Lucinda Grande", "Lucinda Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
 }
-body{
-backGround color : red;
+input{
+    color: #3A7734;
 }

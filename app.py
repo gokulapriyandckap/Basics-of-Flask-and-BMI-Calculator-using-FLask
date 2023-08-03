@@ -23,9 +23,14 @@ def method():
 
 # Get start with jinja2 HTML templates
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def rootpage():
-    return render_template("index.html")
+    name = ''
+    language = ''
+    if request.method =="POST" and 'userName' in request.form:
+        name = request.form.get('userName')
+        language = request.form.get('favoriteLanguage')
+    return render_template("index.html",name =name,language=language)
 
 
 
